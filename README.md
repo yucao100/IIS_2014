@@ -81,9 +81,12 @@ IV. IMPLEMENTATION/LOW LEVEL DESIGN
 The implementation of this program can be broken into a few main tasks: initial feature extraction, deep learning, and classification. Implementation is given in more detail as follows. 
 
 Initial Feature Extraction:
-Written in C++ and employing OpenCV libraries, these classes receive image data in the form of raw pixels and output feature vectors created from the visual bag of words model. These files are stored in /home/huijuan/Deepnet/deepnet/FeatureExtraction. 
-CreateBow.cpp: This file extracts SIFT features from a given number of images and uses the features to build a BOW representation. The clustered features are stored in a .yml file to be processed later. 
-prepKNN.cpp: This file uses the clustered features that were stored in the dictionary to create a BOW descriptor for each image in the data set, defined as a histogram over the features encoded in the dictionary. 
+Written in C++ and employing OpenCV libraries, these classes receive image data in the form of raw pixels and output feature vectors created from the visual bag of words model. These files are stored in /home/huijuan/Deepnet/deepnet/FeatureExtraction.
+ 
+CreateBow.cpp: This file extracts SIFT features from a given number of images and uses the features to build a BOW representation. The clustered features are stored in a .yml file to be processed later.
+ 
+prepKNN.cpp: This file uses the clustered features that were stored in the dictionary to create a BOW descriptor for each image in the data set, defined as a histogram over the features encoded in the dictionary.
+ 
 image_knn.cpp: After having created the training vectors and labels for knn as well as the dictionary for the BOW, we read these in. We also supply a directory containing query images. The queries are fed into knn and the top 100 hits are retrieved. 
 
 Deep Learning:
